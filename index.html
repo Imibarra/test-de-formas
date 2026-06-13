@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formas y colores</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    button {
+      width: 100px;
+      height: 100px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cuadrado {
+      background-color: red;
+    }
+
+    .triangulo {
+      background-color: blue;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .pentagono {
+      background-color: green;
+      clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    }
+
+    .hexagono {
+      background-color: yellow;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+
+    #mensaje {
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Elige una forma</h1>
+
+  <div class="contenedor">
+    <button class="cuadrado" onclick="mostrarMensaje('Cuadrado rojo')"></button>
+    <button class="triangulo" onclick="mostrarMensaje('Triángulo azul')"></button>
+    <button class="pentagono" onclick="mostrarMensaje('Pentágono verde')"></button>
+    <button class="hexagono" onclick="mostrarMensaje('Hexágono amarillo')"></button>
+  </div>
+
+  <p id="mensaje"></p>
+
+  <script>
+    function mostrarMensaje(texto) {
+      document.getElementById("mensaje").textContent = texto;
+    }
+  </script>
+
+</body>
+</html>
